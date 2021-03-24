@@ -7,7 +7,7 @@ function printWelcomeMessage() {
 function checkValidInput(inputvalue){
     let a = +inputvalue;
     if (isNaN(a)){
-        console.log('Please enter a valid number');
+        console.log('\nPlease enter a valid number');
         const inputagain = readline.prompt();
         a = checkValidInput(inputagain);
     } else {
@@ -16,13 +16,13 @@ function checkValidInput(inputvalue){
 }
 
 function enterInput(operator) {
-    console.log(`How many numbers do you want to ${operator} ?`);
+    console.log(`\nHow many numbers do you want to ${operator} ?`);
     const numbers = readline.prompt();
     let operands = [];
     operands.length = +numbers;
     let i = 0;
     while (i < operands.length){
-        console.log(`Please enter the number ${i+1} :`);
+        console.log(`\nPlease enter the number ${i+1} :`);
         const enteredvalue = readline.prompt(); 
         operands[i] = checkValidInput(enteredvalue);
         i++;
@@ -63,16 +63,16 @@ return answer;
 
 
 function performOneArithmeticCalculation() {
-    console.log('Please enter the operator: ');
+    console.log('\nPlease enter the operator: ');
     const response = readline.prompt();
 	const x = enterInput(response);
     const y = doCalculate(response,x);
-    console.log(`The answer is : ${y}`);
+    console.log(`\nThe answer is : ${y}`);
     //performOneCalculation();
 }
 
 function performOneVowelCountingCalculation() {
-    console.log('Please enter a string\n');
+    console.log('\nPlease enter a string\n');
     const stringEntered = readline.prompt();
     const re = /[aeiou]/ig;
     const match = stringEntered.match(re);
@@ -91,14 +91,14 @@ function performOneVowelCountingCalculation() {
           countVowels.U += 1;
         }
       };
-      console.log('The vowel counts are:');
+      console.log('\nThe vowel counts are:');
       for (const property in countVowels) {
         console.log(`${property}: ${countVowels[property]}`);
       };      
 }
 
 function getCalculationMode() {
-    console.log(`Which calculator mode do you want?
+    console.log(`\nWhich calculator mode do you want?
      1) Arithmetic
      2) Vowel Counting`);
     const mode = readline.prompt();
