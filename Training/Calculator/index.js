@@ -2,7 +2,7 @@ const readline = require('readline-sync');
 console.log('Welcome to the calculator!');
 console.log('==========================');
 /* LET'S ENHANCE OUR CALCULATOR TO SUPPORT ALL ARITHMETIC
- OPERATORS i,e., +, -, * AND / USING IF CONSTRUCT. */
+ OPERATORS i,e., +, -, * AND / USING SWITCH. */
 
  console.log('Please enter the operator:');
  const response = readline.prompt();
@@ -13,16 +13,21 @@ console.log('==========================');
  const response2 = readline.prompt();
  let answer;
 
- if (response == '+') {
-     answer = +response1 + +response2;
-     console.log('The answer is: ' + answer);
- } else if (response == '-') {
-     answer = +response1 - +response2;
-     console.log('The answer is: ' + answer);
- } else if (response == '*') {
-     answer = +response1 * +response2;
-     console.log('The answer is: ' + answer);
- } else if (response == '/') {
-     answer = +response1 / +response2;
-     console.log('The answer is: ' + answer);
- }
+ switch (response) {
+    case '+':
+       answer = +response1 + +response2;
+        console.log('The answer is: ' + answer);
+        break;
+    case '-':
+       answer = +response1 - +response2;
+        console.log('The answer is: ' + answer); 
+        break;
+    case '*':
+       answer = +response1 * +response2;
+        console.log('The answer is: ' + answer);
+        break;
+    case '/':
+       answer = +response1 / +response2;
+        console.log('The answer is: ' + answer);
+        break;
+};
